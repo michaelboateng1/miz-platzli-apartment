@@ -145,18 +145,22 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[500px]">
           <div class="lg:col-span-4 space-y-8" id="plan-info">
             <div class="info-item">
-              <h3 id="plan-title" class="text-3xl font-semibold text-gray-900">The Solstice Studio</h3>
+              <h3 id="plan-title" class="text-3xl font-semibold text-gray-900">BASEL LAND</h3>
               <p id="plan-desc" class="text-gray-600 mt-4 leading-relaxed">A perfect blend of efficiency and luxury. Featuring an open-concept living area and premium finishes.</p>
             </div>
 
             <div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-8">
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-400">Starting At</p>
-                <p id="plan-price" class="text-xl font-medium text-gray-900">GH₵1,850/mo</p>
+                <p id="plan-price" class="text-xl font-medium text-gray-900">GH₵4,000 / m</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-400">Room Size</p>
+                <p id="plan-size" class="text-xl font-medium text-gray-900">1,500 sqft</p>
               </div>
             </div>
 
-            <button class="btn btn-primary">Check Availability</button>
+            <a href="/details.html?room=3"><button class="btn btn-primary">Check Availability</button></a>
           </div>
 
           <div class="lg:col-span-8 flex justify-center relative">
@@ -330,9 +334,116 @@
       </div>
     </footer>
 
-    <script src="./assets/scripts/main.js"></script>
-    <script src="./assets/scripts/gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+    <script>
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Hero Section Entrance (Executes on Page Load)
+      const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+      heroTl
+        .from(".hero-badge", { opacity: 0, y: 20, duration: 1, delay: 0.5 })
+        .from(".hero-title", { opacity: 0, y: 40, duration: 1.2 }, "-=0.7")
+        .from(".hero-subtitle", { opacity: 0, y: 30, duration: 1 }, "-=0.8")
+        .from(
+          ".hero-cta .btn",
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.2,
+            duration: 0.8,
+          },
+          "-=0.6"
+        )
+        .from("#navbar", { opacity: 0, y: -20, duration: 1 }, "-=1.5");
+
+      // 2. Sophisticated Living Section Reveal
+      gsap.from(".relative.flex.gap-4 img", {
+        scrollTrigger: {
+          trigger: ".relative.flex.gap-4",
+          start: "top 80%",
+        },
+        scale: 1.2,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power2.out",
+      });
+
+      gsap.from("#features-content > *", {
+        scrollTrigger: {
+          trigger: "#features-content",
+          start: "top 85%",
+        },
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+
+      // 3. "Choose Your Space" Section
+      gsap.from("#plan-info > *", {
+        scrollTrigger: {
+          trigger: "#plan-info",
+          start: "top 80%",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+      });
+
+      gsap.from("#plan-image-container", {
+        scrollTrigger: {
+          trigger: "#plan-image-container",
+          start: "top 80%",
+        },
+        scale: 0.9,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+      });
+
+      // 4. Parallax Effect for Contact Section
+      gsap.to("#parallax-bg", {
+        scrollTrigger: {
+          trigger: "#contact-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: -100, // Moves the image slightly slower than scroll
+        ease: "none",
+      });
+
+      // 5. Contact Form Box Entrance
+      gsap.from("#contact-form-box", {
+        scrollTrigger: {
+          trigger: "#contact-section",
+          start: "top 60%",
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+      });
+
+      // 6. Footer Staggered Reveal
+      gsap.from(".footer-reveal", {
+        scrollTrigger: {
+          trigger: "#main-footer",
+          start: "top 90%",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+      });
+    </script>
   </body>
 </html>

@@ -11,9 +11,7 @@
   </head>
   <body>
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-10 flex justify-between items-center text-white overflow-hidden>
-      <a href="/"
-        ><div class="text-2xl font-semibold tracking-tighter text-black">Miz<span class="font-light text-gray-400">Platzli</span></div></a
-      >
+      <a href="/"><div class="text-2xl font-semibold tracking-tighter text-black">Miz<span class="font-light text-gray-400">Platzli</span></div></a>
 
       <div class="hidden md:flex space-x-8 items-center text-sm uppercase text-[#333] tracking-widest font-medium">
         <a href="/" class="hover:text-[#f15946] transition">Home</a>
@@ -51,8 +49,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div class="lg:col-span-7 space-y-12">
             <div class="space-y-4">
-              <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl">
+              <!-- <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl">
                 <img id="mainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" />
+              </div> -->
+              <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl img-placeholder">
+                <img id="mainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" onload="this.parentElement.classList.remove('img-placeholder')" />
               </div>
               <div id="detailedImages" class="grid grid-cols-3 gap-4">
                 <img src="" onclick="updateImage(this.src)" class="rounded-xl cursor-pointer hover:opacity-80 transition h-32 w-full object-cover border-2 border-transparent active:border-amber-500" />

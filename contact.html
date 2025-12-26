@@ -139,9 +139,95 @@
       </div>
     </footer>
 
-    <script src="./assets/scripts/gsap.js"></script>
-    <script src="./assets/scripts/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+    <script>
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Initial Page Load Timeline
+      const contactTl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
+
+      contactTl
+        // First, zoom the background image slightly
+        .from("#contact-bg-img", {
+          scale: 1.5,
+          duration: 2,
+          ease: "power2.out",
+        })
+        // Slide the main glass card up
+        .from(
+          ".max-w-5xl",
+          {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+          },
+          "-=1.5"
+        )
+        // Animate the left text content
+        .from(
+          ".flex.flex-col.justify-center > div > *",
+          {
+            x: -30,
+            opacity: 0,
+            stagger: 0.2,
+          },
+          "-=1"
+        )
+        // Animate the icons/contact info
+        .from(
+          ".flex.flex-col.justify-center .space-y-4 > div",
+          {
+            y: 20,
+            stagger: 0.15,
+          },
+          "-=0.8"
+        )
+        // Stagger reveal each form group (Label + Input)
+        .from(
+          "#env-form > div",
+          {
+            x: 30,
+            stagger: 0.15,
+          },
+          "-=1"
+        )
+        // Pop the submit button in
+        .from(
+          "button[type='submit']",
+          {
+            scale: 0.9,
+            duration: 1,
+            ease: "back.out(2)",
+          },
+          "-=0.5"
+        );
+
+      // 2. Subtle Background Parallax (Scroll Effect)
+      gsap.to("#contact-bg-img", {
+        scrollTrigger: {
+          trigger: "#env-contact",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: 100, // Moves image down as you scroll up
+        ease: "none",
+      });
+
+      // 3. Footer Reveal (Consistent across pages)
+      gsap.from(".footer-reveal", {
+        scrollTrigger: {
+          trigger: "#main-footer",
+          start: "top 95%",
+        },
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+      });
+    </script>
   </body>
 </html>

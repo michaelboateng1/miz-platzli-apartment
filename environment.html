@@ -12,7 +12,7 @@
   <body>
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-10 flex justify-between items-center text-white">
       <a href="/"
-        ><div class="text-2xl font-semibold tracking-tighter">Miz<span class="font-light text-gray-400">Platzli</span></div></a
+        ><div class="text-2xl font-semibold tracking-tighter text-black">Miz<span class="font-light text-gray-400">Platzli</span></div></a
       >
 
       <div class="hidden md:flex space-x-8 items-center text-sm uppercase text-[#333] tracking-widest font-medium">
@@ -271,9 +271,120 @@
       </div>
     </footer>
 
-    <script src="./assets/scripts/main.js"></script>
-    <script src="./assets/scripts/gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+    <script>
+      // Register the ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Environment Hero Entrance
+      const envTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.2 } });
+
+      envTl
+        .from("#breadcrumb", { opacity: 0, x: -20, duration: 0.8 })
+        .from(
+          "#env-image-container",
+          {
+            clipPath: "inset(0% 100% 0% 0%)", // Sliding door effect
+            opacity: 0,
+            x: -50,
+          },
+          "-=0.4"
+        )
+        .from(
+          "#env-stat",
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.8,
+            duration: 1,
+          },
+          "-=0.6"
+        )
+        .from(
+          "#env-text-container > *",
+          {
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+          },
+          "-=1"
+        );
+
+      // 2. Sustainability Cards (Eco-Cards) Staggered Reveal
+      gsap.from(".eco-card", {
+        scrollTrigger: {
+          trigger: "#eco-features",
+          start: "top 75%",
+        },
+        opacity: 0,
+        y: 50,
+        rotationY: 15,
+        stagger: 0.3,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      // 3. Green Gallery Image Reveal
+      gsap.from("#image-grid > div", {
+        scrollTrigger: {
+          trigger: "#image-grid",
+          start: "top 80%",
+        },
+        opacity: 0,
+        scale: 0.9,
+        stagger: {
+          amount: 1,
+          grid: "auto",
+          from: "start",
+        },
+        duration: 1,
+        ease: "back.out(1.2)",
+      });
+
+      // 4. Dark Map Section - SVG Path Drawing
+      const mapTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#green-map",
+          start: "top 60%",
+        },
+      });
+
+      mapTl
+        .from("#map-center", { scale: 0, duration: 1, ease: "elastic.out(1, 0.5)" })
+        .from(
+          "svg path",
+          {
+            strokeDasharray: 500,
+            strokeDashoffset: 500,
+            stagger: 0.2,
+            duration: 1.5,
+          },
+          "-=0.5"
+        )
+        .to(
+          ".map-feature",
+          {
+            opacity: 1,
+            x: 0,
+            stagger: 0.3,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=1"
+        );
+
+      // 5. Footer Reveal (Re-using the standard reveal)
+      gsap.from(".footer-reveal", {
+        scrollTrigger: {
+          trigger: "#main-footer",
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 20,
+        stagger: 0.2,
+      });
+    </script>
   </body>
 </html>

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 } */
 
+nav {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #0a0e17;
@@ -93,6 +98,12 @@ body {
   background: linear-gradient(90deg, #f15946 0%, #e01a4f 100%);
   color: white;
   border: none;
+}
+
+/* If GSAP fails to load, the buttons stay visible */
+.btn {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .btn-primary:hover {
@@ -246,4 +257,42 @@ body {
 #contact-bg-img {
   background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.5) 0%, hsl(0, 0%, 0%, 0.2) 100%), url("../images/01a.jpg") no-repeat center center/cover fixed;
   background-blend-mode: multiply;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.75rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.plan-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Elements that will fade IN and slide UP */
+#roomName,
+#roomNameBreadcrumb,
+#detailedImages img,
+.prose h3,
+#details p,
+#amenities li,
+.lg\:col-span-5 {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly lower */
+  visibility: hidden; /* Prevents clicking invisible buttons */
+}
+
+#mainRoomImage {
+  opacity: 0;
 }
