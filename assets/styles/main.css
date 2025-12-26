@@ -279,20 +279,3 @@ body {
   opacity: 0;
   transform: translateY(30px);
 }
-
-/* Elements that will fade IN and slide UP */
-#roomName,
-#roomNameBreadcrumb,
-#detailedImages img,
-.prose h3,
-#details p,
-#amenities li,
-.lg\:col-span-5 {
-  opacity: 0;
-  transform: translateY(20px); /* Start slightly lower */
-  visibility: hidden; /* Prevents clicking invisible buttons */
-}
-
-#mainRoomImage {
-  opacity: 0;
-}

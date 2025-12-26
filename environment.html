@@ -42,10 +42,10 @@
         <span class="text-black">Environment</span>
       </nav>
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div class="w-full lg:w-1/2 relative h-[500px]" id="env-image-container">
-          <img src="./assets/images/0T9A9506.jpg" alt="Achimota Surroundings" class="w-full h-full object-cover rounded-2xl shadow-2xl transition-all duration-1000" id="env-img" />
+        <div class="w-full lg:w-1/2 relative h-[500px] rounded-2xl transition-all duration-1000 overflow-hidden" id="env-image-container">
+          <img src="./assets/images/0T9A9506.jpg" alt="Achimota Surroundings" class="w-full h-full object-cover" id="env-img" />
 
-          <div class="absolute -bottom-6 -right-6 bg-[#f15946] text-white p-8 rounded-xl shadow-xl opacity-0 translate-y-10 transition-all duration-1000 delay-500" id="env-stat">
+          <div class="absolute bottom-0 right-0 bg-[#f15946] text-white p-8 rounded-tl-2xl shadow-xl opacity-0 translate-y-10 transition-all duration-1000 delay-500" id="env-stat">
             <p class="text-4xl font-bold">85%</p>
             <p class="text-xs uppercase tracking-widest font-medium">Green Space Canopy</p>
           </div>
@@ -173,7 +173,7 @@
               <div class="map-feature opacity-0 translate-x-[-30px]">
                 <div class="flex items-center gap-4 mb-2">
                   <span class="text-[#f15946] text-xl font-bold">01</span>
-                  <h4 class="text-xl font-semibold">Achimota Forest Reserve</h4>
+                  <h4 class="text-xl font-semibold">Accra</h4>
                 </div>
                 <p class="text-gray-400 pl-10">The city's largest green lung, providing fresh air and recreational trails just 800m away.</p>
               </div>
@@ -275,75 +275,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="./assets/scripts/main.js"></script>
     <script>
-      // Register the ScrollTrigger plugin
       gsap.registerPlugin(ScrollTrigger);
 
       // 1. Environment Hero Entrance
-      const envTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.2 } });
+      const envTl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
 
       envTl
         .from("#breadcrumb", { opacity: 0, x: -20, duration: 0.8 })
-        .from(
-          "#env-image-container",
-          {
-            clipPath: "inset(0% 100% 0% 0%)", // Sliding door effect
-            opacity: 0,
-            x: -50,
-          },
-          "-=0.4"
-        )
-        .from(
-          "#env-stat",
-          {
-            opacity: 0,
-            y: 40,
-            scale: 0.8,
-            duration: 1,
-          },
-          "-=0.6"
-        )
-        .from(
-          "#env-text-container > *",
-          {
-            opacity: 0,
-            y: 30,
-            stagger: 0.2,
-          },
-          "-=1"
-        );
+        // Using fromTo for clipPath is more reliable
+        .fromTo("#env-image-container", { clipPath: "inset(0% 100% 0% 0%)", opacity: 0 }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, duration: 1.5 }, "-=0.5")
+        .to("#env-stat", { opacity: 1, y: 0, scale: 1, duration: 1, ease: "back.out(1.7)" }, "-=1")
+        .from("#env-text-container > *", { opacity: 0, y: 30, stagger: 0.15 }, "-=1");
 
-      // 2. Sustainability Cards (Eco-Cards) Staggered Reveal
-      gsap.from(".eco-card", {
+      // 2. Sustainability Cards (Eco-Cards)
+      gsap.to(".eco-card", {
         scrollTrigger: {
           trigger: "#eco-features",
           start: "top 75%",
+          toggleActions: "play none none none", // Ensures it only plays once
         },
-        opacity: 0,
-        y: 50,
-        rotationY: 15,
-        stagger: 0.3,
+        opacity: 1,
+        y: 0,
+        rotationY: 0, // Animate from a starting rotation if desired
+        stagger: 0.2,
         duration: 1,
         ease: "power2.out",
       });
 
       // 3. Green Gallery Image Reveal
-      gsap.from("#image-grid > div", {
+      gsap.to("#image-grid > div", {
         scrollTrigger: {
           trigger: "#image-grid",
           start: "top 80%",
         },
-        opacity: 0,
-        scale: 0.9,
-        stagger: {
-          amount: 1,
-          grid: "auto",
-          from: "start",
-        },
-        duration: 1,
-        ease: "back.out(1.2)",
+        opacity: 1,
+        scale: 1,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power2.out",
       });
 
-      // 4. Dark Map Section - SVG Path Drawing
+      // 4. Dark Map Section
       const mapTl = gsap.timeline({
         scrollTrigger: {
           trigger: "#green-map",
@@ -352,14 +324,14 @@
       });
 
       mapTl
-        .from("#map-center", { scale: 0, duration: 1, ease: "elastic.out(1, 0.5)" })
-        .from(
+        .from("#map-center", { scale: 0, duration: 1, ease: "back.out(2)" })
+        .to(
           "svg path",
           {
-            strokeDasharray: 500,
-            strokeDashoffset: 500,
+            strokeDashoffset: 0, // Draws the lines
             stagger: 0.2,
             duration: 1.5,
+            ease: "power2.inOut",
           },
           "-=0.5"
         )
@@ -368,23 +340,11 @@
           {
             opacity: 1,
             x: 0,
-            stagger: 0.3,
+            stagger: 0.2,
             duration: 0.8,
-            ease: "power3.out",
           },
           "-=1"
         );
-
-      // 5. Footer Reveal (Re-using the standard reveal)
-      gsap.from(".footer-reveal", {
-        scrollTrigger: {
-          trigger: "#main-footer",
-          start: "top 90%",
-        },
-        opacity: 0,
-        y: 20,
-        stagger: 0.2,
-      });
     </script>
   </body>
 </html>
