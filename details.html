@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Little Home - Miz Platzli</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-10 flex justify-between items-center text-white overflow-hidden>
+      <a href="/"
+        ><div class="text-2xl font-semibold tracking-tighter text-black">Miz<span class="font-light text-gray-400">Platzli</span></div></a
+      >
+
+      <div class="hidden md:flex space-x-8 items-center text-sm uppercase text-[#333] tracking-widest font-medium">
+        <a href="/" class="hover:text-[#f15946] transition">Home</a>
+        <a href="./rooms.html" class="hover:text-[#f15946] transition">Rooms</a>
+        <a href="./environment.html" class="hover:text-[#f15946] transition">Environment</a>
+        <a href="./contact.html" class="hover:text-[#f15946] transition">Contact</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="#000" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+
+      <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-2xl transform translate-x-full transition-transform duration-300 md:hidden">
+        <button id="close-btn" class="absolute top-8 right-10 text-4xl">&times;</button>
+        <a href="./" class="hover:text-[#f15946]">Home</a>
+        <a href="./rooms.html" class="hover:text-[#f15946]">Rooms</a>
+        <a href="./environment.html" class="hover:text-[#f15946]">Environment</a>
+        <a href="./contact.html" class="hover:text-[#f15946]">Contact</a>
+      </div>
+    </nav>
+
+    <section class="pt-32 pb-24 bg-white px-6 md:px-20">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12">
+          <nav class="flex text-xs uppercase tracking-widest text-gray-400 mb-4">
+            <a href="/" class="hover:text-[#f15946]">Home</a>
+            <span class="mx-2">/</span>
+            <a href="./rooms.html" class="hover:text-[#f15946]">Rooms</a>
+            <span class="mx-2">/</span>
+            <span id="roomNameBreadcrumb" class="text-gray-900">The Achimota Studio</span>
+          </nav>
+          <h1 id="roomName" class="text-4xl font-light tracking-tighter">The <span class="font-semibold italic">Achimota Studio</span></h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div class="lg:col-span-7 space-y-12">
+            <div class="space-y-4">
+              <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl">
+                <img id="mainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" />
+              </div>
+              <div id="detailedImages" class="grid grid-cols-3 gap-4">
+                <img src="" onclick="updateImage(this.src)" class="rounded-xl cursor-pointer hover:opacity-80 transition h-32 w-full object-cover border-2 border-transparent active:border-amber-500" />
+                <img src="" onclick="updateImage(this.src)" class="rounded-xl cursor-pointer hover:opacity-80 transition h-32 w-full object-cover border-2 border-transparent" />
+                <img src="" onclick="updateImage(this.src)" class="rounded-xl cursor-pointer hover:opacity-80 transition h-32 w-full object-cover border-2 border-transparent" />
+              </div>
+            </div>
+
+            <div class="prose prose-lg text-gray-600">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">Space Overview</h3>
+              <div id="details"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-y border-gray-100">
+              <div>
+                <p class="text-xs uppercase text-gray-400 font-bold mb-1">Room Size</p>
+                <p id="roomSize" class="text-xl font-medium"></p>
+              </div>
+              <div>
+                <p class="text-xs uppercase text-gray-400 font-bold mb-1">Bathrooms</p>
+                <p id="bathrooms" class="text-xl font-medium"></p>
+              </div>
+              <div>
+                <p class="text-xs uppercase text-gray-400 font-bold mb-1">Floor Level</p>
+                <p id="floorLevel" class="text-xl font-medium"></p>
+              </div>
+              <div>
+                <p class="text-xs uppercase text-gray-400 font-bold mb-1">Availability</p>
+                <p id="availability" class="text-xl font-medium text-green-600"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 sticky top-32">
+            <div class="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm">
+              <div class="mb-8">
+                <p class="text-sm text-gray-500 font-medium">Starting from</p>
+                <div class="flex items-baseline gap-2">
+                  <span id="price" class="text-4xl font-bold text-gray-900"></span>
+                  <span class="text-gray-500">/ month</span>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <h4 class="font-bold text-sm uppercase tracking-widest">Included Amenities</h4>
+                <ul id="amenities" class="space-y-3">
+                  <li class="flex items-center gap-3 text-gray-700">
+                    <svg class="w-5 h-5 text-amber-500" fill="#f15946" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" /></svg>
+                  </li>
+                  <li class="flex items-center gap-3 text-gray-700">
+                    <svg class="w-5 h-5 text-amber-500" fill="#f15946" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" /></svg>
+                  </li>
+                  <li class="flex items-center gap-3 text-gray-700">
+                    <svg class="w-5 h-5 text-amber-500" fill="#f15946" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" /></svg>
+                  </li>
+                </ul>
+              </div>
+
+              <a href="./contact.html">
+                <button class="btn btn-primary my-4 w-full flex items-center justify-center gap-3 hover:bg-[#f15946] text-black font-bold py-4 rounded-xl transition-all transform hover:-translate-y-1 active:scale-95">
+                  Contact for room
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </button>
+              </a>
+
+              <p class="text-center text-xs text-gray-400 mt-4 italic">No obligation viewing • Usually takes 20 mins</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="main-footer" class="bg-[#0a0a0a] text-white pt-20 pb-10 px-6 md:px-20 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div class="footer-reveal">
+            <h2 class="text-3xl font-semibold tracking-tighter mb-6">Miz<span class="font-light text-gray-500">Platzli</span></h2>
+            <p class="text-gray-400 max-w-sm leading-relaxed">Redefining urban elegance since 2015. Located in the heart of the city's most vibrant district.</p>
+          </div>
+
+          <div class="footer-reveal">
+            <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
+            <div class="flex border-b border-gray-700 pb-2">
+              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
+              <button class="text-[#f15946] hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20 footer-reveal">
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Explore</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li><a href="./rooms.html" class="hover:text-amber-500 transition">Rooms</a></li>
+              <li><a href="./environment.html" class="hover:text-amber-500 transition">Environment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Legal</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li><a href="#" class="hover:text-amber-500 transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-amber-500 transition">Terms and conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Social</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-900 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p class="text-gray-600 text-xs">© 2024 MizPlatzli. All rights reserved.</p>
+          <div class="text-[10vw] font-bold text-[#151515] leading-none select-none">MizPlatzli</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/scripts/gsap.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+    <script type="module" src="./assets/scripts/getRoomData.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Little Home - Miz Platzli</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-10 flex justify-between items-center text-white">
+      <a href="/"
+        ><div class="text-2xl font-semibold tracking-tighter">Miz<span class="font-light text-gray-400">Platzli</span></div></a
+      >
+
+      <div class="hidden md:flex space-x-8 items-center text-sm uppercase text-[#e7e7e7] tracking-widest font-medium">
+        <a href="/" class="hover:text-[#f15946] transition">Home</a>
+        <a href="./rooms.html" class="hover:text-[#f15946] transition">Rooms</a>
+        <a href="./environment.html" class="hover:text-[#f15946] transition">Environment</a>
+        <a href="./contact.html" class="hover:text-[#f15946] transition">Contact</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+
+      <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-2xl transform translate-x-full transition-transform duration-300 md:hidden">
+        <button id="close-btn" class="absolute top-8 right-10 text-4xl">&times;</button>
+        <a href="/" class="hover:text-[#f15946]">Home</a>
+        <a href="./rooms.html" class="hover:text-[#f15946]">Rooms</a>
+        <a href="./environment.html" class="hover:text-[#f15946]">Environment</a>
+        <a href="./contact.html" class="hover:text-[#f15946]">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-container">
+      <!-- Background elements -->
+      <div class="hero-background"></div>
+
+      <!-- Main content -->
+      <main class="hero-content">
+        <p class="hero-badge">PREMIUM APARTMENTS</p>
+        <h1 class="hero-title">Modern Living In The Heart Of The City</h1>
+        <p class="hero-subtitle">Experience luxury apartment living with stunning city views, premium environment, and smart home technology designed for contemporary urban life.</p>
+
+        <div class="hero-cta">
+          <a href="./contact.html" class="btn btn-primary capitalize"> <i class="fas fa-phone-alt"></i> contact us </a>
+          <a href="./environment.html" class="btn btn-secondary capitalize"> <i class="fas fa-play-circle"></i> Virtual Tour </a>
+        </div>
+      </main>
+    </div>
+
+    <section class="py-24 bg-white px-6 md:px-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative flex gap-4 h-[500px]">
+          <div class="w-1/2 h-full pt-12">
+            <img src="./assets/images/0T9A9541.jpg" alt="Inside View" class="w-full h-full object-cover rounded-sm shadow-xl" />
+          </div>
+          <div class="w-1/2 h-full pb-12">
+            <img src="./assets/images/0T9A9453.jpg" alt="Inside View" class="w-full h-full object-cover rounded-sm shadow-xl" />
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-100 -z-10 rounded-full blur-2xl opacity-60"></div>
+        </div>
+
+        <div id="features-content">
+          <span class="text-[#f15946] font-semibold tracking-[0.2em] uppercase text-sm">Sophisticated Living</span>
+          <h2 class="text-4xl md:text-5xl font-light text-gray-900 mt-4 mb-6 leading-tight">
+            Designed for those who <br />
+            <span class="font-semibold">value excellence.</span>
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-10 text-lg">Experience a new standard of urban living. From Italian-inspired kitchens to floor-to-ceiling windows, every detail at Luxe Apartments has been curated for comfort and style.</p>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <svg class="w-6 h-6 text-[#f15946]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Prime Location</h4>
+                <p class="text-sm text-gray-500">District court, Achimota.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <svg class="w-6 h-6 text-[#f15946]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.183.244l-.28.14a2 2 0 01-2.983-1.884V1.83a2 2 0 012.184-1.984l.327.054a6 6 0 003.956-.404l.28-.14a6 6 0 015.074 0l.28.14a6 6 0 003.956.404l.327-.054a2 2 0 012.184 1.984V13.5a2 2 0 01-1.651 1.972l-.119.024a2 2 0 00-1.192.404l-.243.166z"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Rooftop Lounge</h4>
+                <p class="text-sm text-gray-500">24/7 access with skyline views.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="mt-12 border-b-2 border-[#f15946] pb-1 text-gray-900 font-semibold hover:text-[#f15946] transition duration-300"><a href="./environment.html">View All Environment &rarr;</a></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="py-24 bg-gray-50 px-6 md:px-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-light text-gray-900 mb-4">Choose Your <span class="font-semibold">Space</span></h2>
+          <div class="flex justify-center space-x-4 mt-8" id="tab-container">
+            <button onclick="switchPlan('studio')" class="tab-btn active px-6 py-2 border-b-2 border-[#f15946] text-[#f15946] font-medium transition-all" data-plan="studio">Studio Room</button>
+            <button onclick="switchPlan('one-bed')" class="tab-btn px-6 py-2 border-b-2 border-transparent text-gray-500 hover:text-black transition-all" data-plan="one-bed">1 Bedroom</button>
+            <button onclick="switchPlan('two-bed')" class="tab-btn px-6 py-2 border-b-2 border-transparent text-gray-500 hover:text-black transition-all" data-plan="two-bed">2 Bedroom</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[500px]">
+          <div class="lg:col-span-4 space-y-8" id="plan-info">
+            <div class="info-item">
+              <h3 id="plan-title" class="text-3xl font-semibold text-gray-900">The Solstice Studio</h3>
+              <p id="plan-desc" class="text-gray-600 mt-4 leading-relaxed">A perfect blend of efficiency and luxury. Featuring an open-concept living area and premium finishes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-8">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-400">Starting At</p>
+                <p id="plan-price" class="text-xl font-medium text-gray-900">$1,850/mo</p>
+              </div>
+            </div>
+
+            <button class="btn btn-primary">Check Availability</button>
+          </div>
+
+          <div class="lg:col-span-8 flex justify-center relative">
+            <div id="plan-image-container" class="w-full max-w-2xl bg-white p-8 rounded-xl shadow-2xl">
+              <img id="plan-img" src="./assets/images/0T9A9268.jpg" alt="Floor Plan" class="w-full h-auto object-contain" />
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-amber-100 rounded-full -z-10 opacity-30 blur-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="py-24 bg-gray-50 px-6 md:px-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-light text-gray-900 mb-4">Choose Your <span class="font-semibold">Space</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[500px]">
+          <div class="lg:col-span-4 space-y-8" id="plan-info">
+            <div class="info-item">
+              <h3 id="plan-title" class="text-3xl font-semibold text-gray-900">The Solstice Studio</h3>
+              <p id="plan-desc" class="text-gray-600 mt-4 leading-relaxed">A perfect blend of efficiency and luxury. Featuring an open-concept living area and premium finishes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-8">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-400">Starting At</p>
+                <p id="plan-price" class="text-xl font-medium text-gray-900">GH₵1,850/mo</p>
+              </div>
+            </div>
+
+            <button class="btn btn-primary">Check Availability</button>
+          </div>
+
+          <div class="lg:col-span-8 flex justify-center relative">
+            <div id="plan-image-container" class="w-full max-w-2xl bg-white p-8 rounded-xl shadow-2xl">
+              <img id="plan-img" src="./assets/images/0T9A9268.jpg" alt="Room" class="w-full h-auto object-contain" />
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-amber-100 rounded-full -z-10 opacity-30 blur-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-24 bg-white px-6 md:px-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20">
+          <h2 class="text-xs uppercase tracking-[0.4em] text-[#f15946] font-bold mb-4">The Standard</h2>
+          <p class="text-4xl md:text-6xl font-light text-gray-900 tracking-tighter leading-tight">
+            Designed to meet <br />
+            <span class="italic font-semibold">your expectations.</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+          <div class="md:col-span-7 group overflow-hidden rounded-3xl relative">
+            <img src="./assets/images/0T9A9354.jpg" alt="Poolside" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-10">
+              <h3 class="text-2xl font-bold text-white mb-2">Well Decorated Halls</h3>
+              <p class="text-gray-300 max-w-sm">A temperature-controlled halls with elegant furnishings and ample natural light.</p>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 flex flex-col justify-between gap-8">
+            <div class="bg-gray-50 p-10 rounded-3xl">
+              <div class="w-12 h-12 bg-[#f15946] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-[#e01a4f]/30">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">Unmatched Security</h3>
+              <p class="text-gray-600">24/7 security access and concierge services ensuring your peace of mind is never compromised.</p>
+            </div>
+
+            <div class="relative overflow-hidden rounded-3xl group h-full">
+              <img src="./assets/images/0T9A9412.jpg" alt="Gym" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-bold tracking-widest uppercase border-b-2 border-[#f15946] pb-1">Elite Bed Room</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-12 mt-4">
+            <div class="border-t border-gray-100 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div class="max-w-md">
+                <h4 class="text-xl font-semibold mb-2">Smart Living Integration</h4>
+                <p class="text-gray-500">Every unit comes equipped with integrated climate control and lighting systems managed by your smartphone.</p>
+              </div>
+              <a href="./rooms.html" class="btn btn-primary rounded-full!"> View All Rooms </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script>
+      // GSAP Reveal for Features
+      gsap.to(".feature-item", {
+        scrollTrigger: {
+          trigger: "#features",
+          start: "top 75%",
+        },
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1.2,
+        ease: "power4.out",
+      });
+    </script> -->
+
+    <section id="contact-section" class="relative py-24 bg-black text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-40">
+        <img id="parallax-bg" src="./assets/images/0T9A9506.jpg" class="w-full h-[120%] object-cover scale-110" alt="Luxury Interior" />
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div id="contact-text">
+          <h2 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+            Ready to find <br />
+            <span class="font-semibold italic text-[#f15946]">your home?</span>
+          </h2>
+          <p class="text-lg text-gray-300 mb-12 max-w-md">Join our community and experience the pinnacle of urban luxury. Schedule a private tour today.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <span class="w-12 h-[1px] bg-[#f15946]"></span>
+              <p class="uppercase tracking-widest text-sm text-[#f15946] font-bold">Inquiries</p>
+            </div>
+            <p class="text-lg font-light">+233 0543 345 3242</p>
+            <p class="text-lg font-light">mizplatzli@gmail.com</p>
+          </div>
+        </div>
+
+        <div id="contact-form-box" class="bg-white p-10 md:p-14 rounded-sm text-black shadow-2xl">
+          <h3 class="text-2xl font-semibold mb-8">Schedule a Tour</h3>
+          <form action="#" class="space-y-6">
+            <div class="relative border-b border-gray-200 py-2">
+              <input type="text" placeholder="Full Name" class="w-full outline-none focus:placeholder-transparent transition-all" />
+            </div>
+            <div class="relative border-b border-gray-200 py-2">
+              <input type="email" placeholder="Email Address" class="w-full outline-none focus:placeholder-transparent transition-all" />
+            </div>
+            <div class="relative border-b border-gray-200 py-2">
+              <select class="w-full outline-none bg-transparent">
+                <option disabled selected>Interested In...</option>
+                <option>Studio</option>
+                <option>1 Bedroom</option>
+                <option>2 Bedroom</option>
+              </select>
+            </div>
+            <button class="btn btn-primary">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer id="main-footer" class="bg-[#0a0a0a] text-white pt-20 pb-10 px-6 md:px-20 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div class="footer-reveal">
+            <h2 class="text-3xl font-semibold tracking-tighter mb-6">Miz<span class="font-light text-gray-500">Platzli</span></h2>
+            <p class="text-gray-400 max-w-sm leading-relaxed">Redefining urban elegance since 2015. Located in the heart of the city's most vibrant district.</p>
+          </div>
+
+          <div class="footer-reveal">
+            <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
+            <div class="flex border-b border-gray-700 pb-2">
+              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
+              <button class="text-[#f15946] hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20 footer-reveal">
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Explore</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li><a href="./rooms.html" class="hover:text-amber-500 transition">Rooms</a></li>
+              <li><a href="./environment.html" class="hover:text-amber-500 transition">Environment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Legal</h4>
+            <ul class="space-y-4 text-gray-400 text-sm">
+              <li><a href="#" class="hover:text-amber-500 transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-amber-500 transition">Terms and conditions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Social</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#f15946] hover:border-[#f15946] transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-900 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p class="text-gray-600 text-xs">© 2024 MizPlatzli. All rights reserved.</p>
+          <div class="text-[10vw] font-bold text-[#151515] leading-none select-none">MizPlatzli</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  </body>
+</html>
