@@ -136,13 +136,20 @@
 
           <div class="footer-reveal">
             <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
-            <div class="flex border-b border-gray-700 pb-2">
-              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
+            <form class="flex border-b border-gray-700 pb-2" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+              <input type="hidden" name="subject" value="Miz Platzli Newsletter Subscription" />
+              <input type="hidden" name="from_name" value="Miz Platzli Apartments" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <input type="checkbox" name="botcheck" id="" style="display: none" />
+
+              <input type="email" placeholder="Your email address" name="subscriptionEmail" class="bg-transparent w-full outline-none text-lg" required />
               <button class="text-[#f15946] hover:text-white transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
-            </div>
+            </form>
           </div>
+        </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20 footer-reveal">

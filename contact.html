@@ -69,20 +69,25 @@
             </div>
           </div>
 
-          <form id="env-form" class="space-y-6">
+          <form id="form" class="space-y-6" method="POST">
+            <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+            <input type="hidden" name="subject" value="New Inquiry from Miz Platzli Contact Form" />
+            <input type="hidden" name="form_name" id="MizPlatzliContactForm" value="Miz Platzli Contact Form" />
+            <input type="checkbox" name="botcheck" id="" style="display: none" />
             <div class="space-y-2">
               <label class="text-sm font-medium text-white/80 ml-1">Full Name</label>
-              <input type="text" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="Enter your full name" />
+              <input type="text" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="Enter your full name" name="fullName" required />
             </div>
             <div class="space-y-2">
               <label class="text-sm font-medium text-white/80 ml-1">Email</label>
-              <input type="email" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="Enter your email address" />
+              <input type="email" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="Enter your email address" name="email" required />
             </div>
             <div class="space-y-2">
               <label class="text-sm font-medium text-white/80 ml-1">How can we help?</label>
-              <textarea rows="4" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="I'm interested in..."></textarea>
+              <textarea rows="4" class="w-full bg-white/5 border border-white/20 rounded-xl px-5 py-4 text-white outline-none focus:border-[#f15946] transition-colors" placeholder="I'm interested in..." name="message" required></textarea>
             </div>
             <button type="submit" class="w-full btn-primary capitalize hover:bg-[#f15946] text-black font-bold py-5 rounded-xl transition-all transform hover:-translate-y-1 active:scale-95">Submit</button>
+            <div id="result"></div>
           </form>
         </div>
       </div>
@@ -98,12 +103,18 @@
 
           <div class="footer-reveal">
             <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
-            <div class="flex border-b border-gray-700 pb-2">
-              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
-              <button class="text-amber-500 hover:text-white transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="#f15946" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <form class="flex border-b border-gray-700 pb-2" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+              <input type="hidden" name="subject" value="Miz Platzli Newsletter Subscription" />
+              <input type="hidden" name="from_name" value="Miz Platzli Apartments" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <input type="checkbox" name="botcheck" id="" style="display: none" />
+
+              <input type="email" placeholder="Your email address" name="subscriptionEmail" class="bg-transparent w-full outline-none text-lg" required />
+              <button class="text-[#f15946] hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
@@ -229,5 +240,6 @@
         duration: 0.8,
       });
     </script>
+    <script src="./assets/scripts/handleFormData.js"></script>
   </body>
 </html>

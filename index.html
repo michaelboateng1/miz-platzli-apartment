@@ -262,19 +262,29 @@
 
         <div id="contact-form-box" class="bg-white p-10 md:p-14 rounded-sm text-black shadow-2xl">
           <h3 class="text-2xl font-semibold mb-8">Schedule a Tour</h3>
-          <form action="#" class="space-y-6">
+          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+            <input type="hidden" name="subject" value="New Tour Request from Miz Platzli" />
+            <input type="hidden" name="from_name" value="Miz Platzli Apartments" />
+            <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+            <input type="checkbox" name="botcheck" id="" style="display: none" />
             <div class="relative border-b border-gray-200 py-2">
-              <input type="text" placeholder="Full Name" class="w-full outline-none focus:placeholder-transparent transition-all" />
+              <input type="text" placeholder="Full Name" name="fullName" class="w-full outline-none focus:placeholder-transparent transition-all" required />
             </div>
             <div class="relative border-b border-gray-200 py-2">
-              <input type="email" placeholder="Email Address" class="w-full outline-none focus:placeholder-transparent transition-all" />
+              <input type="email" placeholder="Email Address" required name="email" class="w-full outline-none focus:placeholder-transparent transition-all" />
             </div>
             <div class="relative border-b border-gray-200 py-2">
-              <select class="w-full outline-none bg-transparent">
+              <input type="tel" placeholder="Please enter your phone number" required name="phoneNumber" class="w-full outline-none focus:placeholder-transparent transition-all" />
+            </div>
+            <div class="relative border-b border-gray-200 py-2">
+              <select class="w-full outline-none bg-transparent" name="interestedIn" required>
                 <option disabled selected>Interested In...</option>
-                <option>Studio</option>
-                <option>1 Bedroom</option>
-                <option>2 Bedroom</option>
+                <option value="SCHYZ">SCHYZ</option>
+                <option value="BERN">BERN</option>
+                <option value="BASEL">BASEL</option>
+                <option value="BASEL LAND">BASEL LAND</option>
+                <option value="ZURICH">ZURICH</option>
               </select>
             </div>
             <button class="btn btn-primary">Submit Request</button>
@@ -293,12 +303,18 @@
 
           <div class="footer-reveal">
             <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
-            <div class="flex border-b border-gray-700 pb-2">
-              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
+            <form class="flex border-b border-gray-700 pb-2" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+              <input type="hidden" name="subject" value="Miz Platzli Newsletter Subscription" />
+              <input type="hidden" name="from_name" value="Miz Platzli Apartments" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <input type="checkbox" name="botcheck" id="" style="display: none" />
+
+              <input type="email" placeholder="Your email address" name="subscriptionEmail" class="bg-transparent w-full outline-none text-lg" required />
               <button class="text-[#f15946] hover:text-white transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
 

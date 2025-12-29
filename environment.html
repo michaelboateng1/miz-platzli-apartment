@@ -43,7 +43,7 @@
       </nav>
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         <div class="w-full lg:w-1/2 relative h-[500px] rounded-2xl transition-all duration-1000 overflow-hidden" id="env-image-container">
-          <img src="./assets/images/0T9A9506.jpg" alt="Achimota Surroundings" class="w-full h-full object-cover" id="env-img" />
+          <img src="./assets/images/0T9A9506.jpg" alt="Accra Surroundings" class="w-full h-full object-cover" id="env-img" />
 
           <div class="absolute bottom-0 right-0 bg-[#f15946] text-white p-8 rounded-tl-2xl shadow-xl opacity-0 translate-y-10 transition-all duration-1000 delay-500" id="env-stat">
             <p class="text-4xl font-bold">85%</p>
@@ -57,7 +57,7 @@
             A sanctuary <br />
             <span class="font-semibold italic">within the city.</span>
           </h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-8">Achimota isn't just a location; it's an ecosystem. Our residence is strategically positioned to offer the tranquility of the forest reserve while maintaining the pulse of Accra's urban center.</p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">Accra isn't just a location; it's an ecosystem. Our residence is strategically positioned to offer the tranquility of the forest reserve while maintaining the pulse of Accra's urban center.</p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex items-center gap-4">
@@ -86,7 +86,7 @@
         <div class="text-center mb-20">
           <span class="text-[#f15946] font-bold tracking-[0.3em] uppercase text-xs">Sustainability</span>
           <h2 class="text-4xl md:text-5xl font-light text-gray-900 mt-4">Built for the <span class="font-semibold italic">Future.</span></h2>
-          <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-lg">We believe in progress that respects nature. Our Achimota residence integrates cutting-edge green technology to reduce our carbon footprint.</p>
+          <p class="text-gray-500 mt-6 max-w-2xl mx-auto text-lg">We believe in progress that respects nature. Our Accra residence integrates cutting-edge green technology to reduce our carbon footprint.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -127,7 +127,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="image-grid">
           <div>
-            <img src="./assets/images/0T9A9274.jpg" alt="Achimota Forest Path" class="w-full h-auto rounded-xl shadow-lg object-cover" />
+            <img src="./assets/images/0T9A9274.jpg" alt="Accra Forest Path" class="w-full h-auto rounded-xl shadow-lg object-cover" />
             <p class="text-sm text-gray-600 mt-3 font-medium">Forest walking paths</p>
           </div>
 
@@ -183,7 +183,7 @@
                   <span class="text-[#f15946] text-xl font-bold">02</span>
                   <h4 class="text-xl font-semibold">Golf Club Access</h4>
                 </div>
-                <p class="text-gray-400 pl-10">Enjoy the expansive fairways of the Achimota Golf Club, reachable within a 6-minute drive.</p>
+                <p class="text-gray-400 pl-10">Enjoy the expansive fairways of the Accra Golf Club, reachable within a 6-minute drive.</p>
               </div>
 
               <div class="map-feature opacity-0 translate-x-[-30px]">
@@ -230,13 +230,20 @@
 
           <div class="footer-reveal">
             <p class="text-sm uppercase tracking-[0.3em] text-[#f15946] mb-4">Stay Updated</p>
-            <div class="flex border-b border-gray-700 pb-2">
-              <input type="email" placeholder="Your email address" class="bg-transparent w-full outline-none text-lg" />
+            <form class="flex border-b border-gray-700 pb-2" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
+              <input type="hidden" name="subject" value="Miz Platzli Newsletter Subscription" />
+              <input type="hidden" name="from_name" value="Miz Platzli Apartments" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <input type="checkbox" name="botcheck" id="" style="display: none" />
+
+              <input type="email" placeholder="Your email address" name="subscriptionEmail" class="bg-transparent w-full outline-none text-lg" required />
               <button class="text-[#f15946] hover:text-white transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
-            </div>
+            </form>
           </div>
+        </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20 footer-reveal">
