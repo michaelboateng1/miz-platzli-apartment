@@ -4,7 +4,7 @@ export const rooms = [
     type: "Studio",
     numberOfBath: 1,
     size: "450 sqft",
-    price: "GH₵1,200 / m",
+    price: "GH₵5,000 / week",
     status: "Available",
     img: "./assets/images/0T9A9279.jpg",
     details: {
@@ -24,7 +24,7 @@ export const rooms = [
     type: "Studio",
     numberOfBath: 2,
     size: "650 sqft",
-    price: "GH₵1,800 / m",
+    price: "GH₵6,000 / 14 night",
     status: "Available",
     img: "./assets/images/0T9A9299.jpg",
     details: {
@@ -44,7 +44,7 @@ export const rooms = [
     type: "2 Bedroom",
     numberOfBath: 2,
     size: "900 sqft",
-    price: "GH₵2,500 / m",
+    price: "GH₵10,000 / 30 night",
     status: "Occupied",
     img: "./assets/images/0T9A9377.jpg",
     details: {
@@ -64,7 +64,7 @@ export const rooms = [
     type: "Penthouse",
     numberOfBath: 3,
     size: "1,500 sqft",
-    price: "GH₵4,000 / m",
+    price: "GH₵800 / night",
     status: "Available",
     img: "./assets/images/0T9A9279.jpg",
     details: {
@@ -84,7 +84,7 @@ export const rooms = [
     type: "Deluxe",
     numberOfBath: 2,
     size: "1,200 sqft",
-    price: "GH₵3,200 / m",
+    price: "GH₵800 / night",
     status: "Occupied",
     img: "./assets/images/0T9A9305.jpg",
     details: {
@@ -99,44 +99,10 @@ export const rooms = [
       floorLevel: "Level 01",
     },
   },
-  {
-    roomName: "The Airport Residential Suite",
-    type: "Suite",
-    numberOfBath: 2,
-    size: "1,000 sqft",
-    price: "GH₵2,800 / m",
-    status: "Available",
-    img: "./assets/images/0T9A9403.jpg",
-    details: {
-      mainImage: "./assets/images/0T9A9403.jpg",
-      detailedImages: ["./assets/images/0T9A9377.jpg", "./assets/images/0T9A9297.jpg", "./assets/images/0T9A9271.jpg"],
-      description: ["A sophisticated suite in Airport Residential Area. Ideal for frequent travelers and corporate executives.", "Fully serviced with a focus on convenience and rapid access to Kotoka International Airport.", "Modern minimalist design with high-end finishes and ambient lighting."],
-      features: ["Keyless entry", "Smart TV integration", "Executive desk area", "Rainfall shower", "Breakfast bar"],
-      amenities: ["Airport Shuttle", "Business Center", "Daily Housekeeping", "Lounge Access"],
-      squareFootage: "1,000 sqft",
-      bathrooms: 2,
-      availability: "Immediate",
-      floorLevel: "Level 04",
-    },
-  },
-  {
-    roomName: "The Osu Loft",
-    type: "Loft",
-    numberOfBath: 1,
-    size: "700 sqft",
-    price: "GH₵1,900 / m",
-    status: "Available",
-    img: "./assets/images/0T9A9268.jpg",
-    details: {
-      mainImage: "./assets/images/0T9A9268.jpg",
-      detailedImages: ["./assets/images/0T9A9480.jpg", "./assets/images/0T9A9297.jpg", "./assets/images/0T9A9271.jpg"],
-      description: ["A trendy loft apartment in the heart of Osu. Featuring a mezzanine bedroom overlooking the double-height living room.", "Designed for the creative mind, with plenty of wall space for art and large windows for natural light.", "The spiral staircase adds a unique architectural touch to this vibrant home."],
-      features: ["Mezzanine floor", "Spiral staircase", "Exposed brickwork", "High-speed Wi-Fi", "Skyline views"],
-      amenities: ["Rooftop Bar Access", "Bike Storage", "24/7 Tech Support", "Communal Workspace"],
-      squareFootage: "700 sqft",
-      bathrooms: 1,
-      availability: "Immediate",
-      floorLevel: "Level 06",
-    },
-  },
 ];
+
+// 80 usd  per night (800gh)
+
+// 500 usd per week (5000gh)
+// 700  usd  per 14 night (6000gh)
+// 1000 usd per 30 night ( 10,000 gh)
