@@ -289,7 +289,7 @@
         </div>
 
         <div id="contact-form-box" class="bg-white p-10 md:p-14 rounded-sm text-black shadow-2xl">
-          <h3 class="text-2xl font-semibold mb-8">Schedule a Tour</h3>
+          <h3 class="text-2xl font-semibold mb-8 capitalize">Make a reservation</h3>
           <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
             <input type="hidden" name="access_key" value="efee4add-0c21-457a-821d-a5d46d0f95b7" />
             <input type="hidden" name="subject" value="New Tour Request from Miz Platzli" />
@@ -304,6 +304,18 @@
             </div>
             <div class="relative border-b border-gray-200 py-2">
               <input type="tel" placeholder="Please enter your phone number" required name="phoneNumber" class="w-full outline-none focus:placeholder-transparent transition-all" />
+            </div>
+            <div class="relative border-b border-gray-200 py-2">
+              <input type="number" placeholder="Please enter the number of guest" required name="numberOfGuest" class="w-full outline-none focus:placeholder-transparent transition-all" />
+            </div>
+            <div class="relative border-b border-gray-200 py-2">
+              <select class="w-full outline-none bg-transparent" name="numberOfNights" required>
+                <option disabled selected>Choose the number of nights</option>
+                <option value="One Night">One Night</option>
+                <option value="One Week">One Week</option>
+                <option value="Two Weeks">14 Nights (Two Weeks)</option>
+                <option value="30 Nights">30 Nights</option>
+              </select>
             </div>
             <div class="relative border-b border-gray-200 py-2">
               <select class="w-full outline-none bg-transparent" name="interestedIn" required>
