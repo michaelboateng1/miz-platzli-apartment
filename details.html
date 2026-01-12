@@ -12,7 +12,7 @@
   <body>
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-10 flex justify-between items-center text-white overflow-hidden>
       <a href="/"
-        ><div class="text-2xl font-semibold tracking-tighter">Miz<span class="font-light text-gray-400">Platzli</span></div></a
+        ><div class="text-2xl font-semibold tracking-tighter text-black">Miz<span class="font-light text-gray-400">Platzli</span></div></a
       >
 
       <div class="hidden md:flex space-x-8 items-center text-sm uppercase text-[#333] tracking-widest font-medium">
@@ -51,9 +51,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div class="lg:col-span-7 space-y-12">
             <div class="space-y-4">
-              <!-- <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl">
-                <img id="mainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" />
-              </div> -->
+              <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl img-placeholder">
+                <img id="secondMainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" width="200" height="400" alt="Main Room View" onload="this.parentElement.classList.remove('img-placeholder')" />
+              </div>
               <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl img-placeholder">
                 <img id="mainRoomImage" src="" class="w-full h-full object-cover" alt="Main Room View" onload="this.parentElement.classList.remove('img-placeholder')" />
               </div>
@@ -95,7 +95,7 @@
                 <p class="text-sm text-gray-500 font-medium">Starting from</p>
                 <div class="flex items-baseline gap-2">
                   <span id="price" class="text-4xl font-bold text-gray-900"></span>
-                  <span class="text-gray-500">/ month</span>
+                  <span class="text-gray-500"></span>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           <div class="footer-reveal">
             <h2 class="text-3xl font-semibold tracking-tighter mb-6">Miz<span class="font-light text-gray-500">Platzli</span></h2>
-            <p class="text-gray-400 max-w-sm leading-relaxed">Redefining urban elegance since 2015. Located in the heart of the city's most vibrant district.</p>
+            <p class="text-gray-400 max-w-sm leading-relaxed">Redefining urban elegance. Located in the heart of the city's most vibrant district <a href="https://www.google.com/maps/search/Adenta+Municipal+District+(Ismail+Aga+Yurdu)/@5.6907147,-0.1605765,15z?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">(Adenta Municipal District, GH).</a></p>
           </div>
 
           <div class="footer-reveal">
@@ -152,14 +152,15 @@
             </form>
           </div>
         </div>
-        </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20 footer-reveal">
           <div>
             <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Explore</h4>
             <ul class="space-y-4 text-gray-400 text-sm">
+              <li><a href="./" class="hover:text-amber-500 transition">Home</a></li>
               <li><a href="./rooms.html" class="hover:text-amber-500 transition">Rooms</a></li>
               <li><a href="./environment.html" class="hover:text-amber-500 transition">Environment</a></li>
+              <li><a href="./contact.html" class="hover:text-amber-500 transition">Contact</a></li>
             </ul>
           </div>
           <div>
@@ -185,6 +186,7 @@
         </div>
       </div>
     </footer>
+
 
     <script src="./assets/scripts/gsap.js"></script>
     <script src="./assets/scripts/main.js"></script>

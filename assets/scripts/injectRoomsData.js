@@ -75,7 +75,7 @@ async function renderRooms() {
       <div class="flex justify-between items-start">
         <div>
           <h3 class="text-xl font-semibold text-gray-900">${room.roomName}</h3>
-          <p class="text-gray-500 text-sm mt-1">${room.type} • ${room.sqft}</p>
+          <p class="text-gray-500 text-sm mt-1">${room.type} • ${room.size}</p>
         </div>
         <p class="text-lg font-medium text-[#f15946]">${room.price}</p>
       </div>

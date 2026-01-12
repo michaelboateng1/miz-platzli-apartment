@@ -59,6 +59,7 @@ import { rooms } from "./roomsData.js";
 
 // Selectors
 const mainRoomImage = document.getElementById("mainRoomImage");
+const secondMainRoomImage = document.getElementById("secondMainRoomImage");
 const detailedImages = document.getElementById("detailedImages");
 const roomName = document.getElementById("roomName");
 const roomNameBreadcrumb = document.getElementById("roomNameBreadcrumb");
@@ -84,7 +85,8 @@ async function populateRoomDetails() {
   // 2. Inject Data
   roomName.textContent = roomData.roomName;
   roomNameBreadcrumb.textContent = roomData.roomName;
-  mainRoomImage.src = roomData.details.mainImage;
+  mainRoomImage.src = roomData.img;
+  secondMainRoomImage.src = roomData.details.mainImage;
 
   // Handle Detailed Images
   detailedImages.innerHTML = "";
