@@ -64,7 +64,7 @@ export const rooms = [
     type: "2 Bedrooms",
     numberOfBath: 3,
     size: "1,500 sqft",
-    price: "GH₵800 / nights",
+    price: "GH₵800 / night",
     status: "Available",
     img: "./assets/images/0T9A9279.jpg",
     details: {
@@ -84,7 +84,7 @@ export const rooms = [
     type: "1 Bedroom",
     numberOfBath: 2,
     size: "1,200 sqft",
-    price: "GH₵800 / nights",
+    price: "GH₵800 / night",
     status: "Occupied",
     img: "./assets/images/0T9A9415.jpg",
     details: {
