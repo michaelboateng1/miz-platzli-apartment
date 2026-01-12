@@ -68,8 +68,8 @@ export const rooms = [
     status: "Available",
     img: "./assets/images/0T9A9279.jpg",
     details: {
-      mainImage: "./assets/images/0T9A9279.jpg",
-      detailedImages: ["./assets/images/0T9A9417.jpg", "./assets/images/0T9A9297.jpg", "./assets/images/0T9A9271.jpg"],
+      mainImage: "./assets/images/0T9A9417.jpg",
+      detailedImages: ["./assets/images/0T9A9279.jpg", "./assets/images/0T9A9297.jpg", "./assets/images/0T9A9271.jpg"],
       description: ["The pinnacle of luxury in Ghana. This room offers unmatched privacy and a good views of the city.", "Features a private rooftop terrace and an outdoor lounge area perfect for sunset cocktails.", "Interior finished with imported marble and smart home automation throughout."],
       features: ["Private rooftop", "Floor-to-ceiling windows", "Chef's kitchen", "Private elevator entry", "Automated blinds"],
       amenities: ["Private Pool", "Private Gym", "Butler Service", "Parking Space"],
